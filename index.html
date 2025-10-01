@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Semana del Pique Macho — Cochabamba</title>
+  <meta name="description" content="Semana del Pique Macho — festival gastronómico en Cochabamba. Talleres, concursos, degustaciones y música folklórica.">
+  <meta name="keywords" content="Semana del Pique Macho, pique macho, Cochabamba, gastronomía boliviana, festival">
+
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Estilos (puedes extraerlos a styles.css si prefieres) -->
+  <style>
+    :root{
+      --rojo:#D32F2F;
+      --amarillo:#FBC02D;
+      --verde:#388E3C;
+      --calido-1:#FFECB3;
+      --calido-2:#FFF3E0;
+      --neutro:#F5F5F5;
+      --texto:#333;
+      --max-width:1100px;
+      --glass: rgba(255,255,255,0.85);
+      --shadow: 0 8px 24px rgba(0,0,0,0.12);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--neutro),#fff);color:var(--texto);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    /* Container */
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:24px}
+
+    /* Hero */
+    .hero{
+      display:grid;grid-template-columns:1fr;gap:18px;align-items:center;background-image:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15)), url('https://commons.wikimedia.org/wiki/File:Pique_Macho_Bolivia.jpg');background-size:cover;background-position:center;border-radius:18px;padding:48px;color:#fff;box-shadow:var(--shadow);overflow:hidden
+    }
+    .hero .eyebrow{display:inline-block;background:var(--calido-2);color:var(--texto);padding:6px 10px;border-radius:999px;font-weight:600}
+    .hero h1{margin:6px 0 8px;font-size:clamp(28px,5vw,46px);line-height:1.02}
+    .hero p.lead{margin:0 0 14px;opacity:0.95}
+    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:var(--rojo);color:#fff}
+    .btn-ghost{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.18)}
+
+    .hero .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+    .chip{background:rgba(255,255,255,0.08);padding:8px 10px;border-radius:10px;font-size:14px}
+
+    /* Two-column content */
+    .columns{display:grid;grid-template-columns:1fr 420px;gap:22px;margin-top:22px}
+
+    /* Card */
+    .card{background:var(--glass);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+
+    /* Countdown */
+    .countdown{display:flex;gap:10px;justify-content:space-between}
+    .countdown .unit{flex:1;text-align:center;padding:12px;border-radius:8px;background:rgba(255,255,255,0.9)}
+    .unit strong{display:block;font-size:20px}
+
+    /* Programa */
+    .program{display:grid;gap:10px}
+    .event{display:flex;gap:12px;align-items:flex-start}
+    .event .date{min-width:88px;font-weight:800;color:var(--rojo)}
+
+    /* Form */
+    form .field{display:flex;flex-direction:column;margin-bottom:10px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #ddd;font-size:15px}
+    .small{font-size:13px;color:#666}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .testimonial{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+    /* Footer */
+    footer{margin-top:26px;padding:20px 12px;text-align:center;color:#666}
+    .socials a{margin:0 6px;color:var(--texto);opacity:0.8}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .columns{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:repeat(2,1fr)}
+      .hero{padding:32px}
+    }
+    @media (max-width:560px){
+      .testimonials{grid-template-columns:1fr}
+      .hero{padding:22px;border-radius:12px}
+    }
+
+    /* Accent decorative */
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.9);padding:8px 12px;border-radius:999px;font-weight:700}
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- HERO -->
+    <header class="hero" role="banner">
+      <div>
+        <span class="eyebrow">Semana del Pique Macho</span>
+        <h1>¡Un pique para machos, que quema la lengua y calienta el alma!</h1>
+        <p class="lead">Del 20 al 27 de septiembre — Cochabamba. Talleres, concursos, degustaciones y mucho picante. Ven con amigos y familia.</p>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" id="btn-register"><i class="fas fa-utensils"></i> Regístrate gratis</button>
+          <a class="btn btn-ghost" href="#program"><i class="fas fa-calendar-alt"></i> Ver programa</a>
+        </div>
+
+        <div class="meta" style="margin-top:12px">
+          <span class="chip"><i class="fas fa-map-marker-alt"></i> Cochabamba</span>
+          <span class="chip"><i class="fas fa-users"></i> Evento familiar</span>
+          <span class="chip"><i class="fas fa-fire"></i> Concurso de picantes</span>
+        </div>
+      </div>
+
+      <!-- Countdown & registro rápido -->
+      <aside style="margin-top:16px">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+            <div>
+              <div class="badge"><i class="fas fa-clock"></i> <span id="countdownLabel">Cuenta regresiva</span></div>
+            </div>
+            <div style="font-size:13px;color:#222;opacity:0.9">Entrada gratuita</div>
+          </div>
+
+          <div class="countdown" aria-live="polite">
+            <div class="unit"><strong id="days">00</strong><span class="small">Días</span></div>
+            <div class="unit"><strong id="hours">00</strong><span class="small">Horas</span></div>
+            <div class="unit"><strong id="minutes">00</strong><span class="small">Min</span></div>
+            <div class="unit"><strong id="seconds">00</strong><span class="small">Seg</span></div>
+          </div>
+
+          <hr style="margin:12px 0;opacity:0.8">
+
+          <form id="miniForm">
+            <div class="field"><label class="small">Nombre</label><input type="text" id="nameMini" required placeholder="Tu nombre"></div>
+            <div class="field"><label class="small">Correo</label><input type="email" id="emailMini" required placeholder="ejemplo@mail.com"></div>
+            <div style="display:flex;gap:8px"><button class="btn btn-primary" type="submit">Apuntarme</button><button class="btn" type="button" id="btn-more">Más info</button></div>
+          </form>
+        </div>
+      </aside>
+    </header>
+
+    <!-- COLUMNS: Left content (program + about) + Right (map/form) -->
+    <section class="columns">
+
+      <div>
+        <!-- About -->
+        <div class="card" style="margin-top:14px">
+          <h2>De Cochabamba para el mundo</h2>
+          <p>La Semana del Pique Macho celebra la tradición, el picante y la convivencia. Aprende recetas, participa en concursos y disfruta de la música folklórica mientras compartes un buen pique con amigos.</p>
+
+          <h3 style="margin-top:10px">Frases del festival</h3>
+          <ul>
+            <li>"Un pique al día es la clave de la alegría."</li>
+            <li>"Pica como macho, comparte como boliviano."</li>
+            <li>"Sírvanse caseritos, el pique une generaciones."</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Ingredientes destacados</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <img src="../01102025 web/img/img1.jpg" alt="papas" style="width:120px;border-radius:10px;object-fit:cover">
+            <img src="../01102025 web/img/img2.jpg" alt="locotos" style="width:120px;border-radius:10px;object-fit:cover;opacity:0.9">
+            <div style="flex:1;min-width:220px">
+              <p class="small">Locotos, papas, charque, cebolla y la sazón cochabambina: la combinación que hace único al Pique Macho.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programa -->
+        <div id="program" class="card" style="margin-top:14px">
+          <h2>Programa (20 — 27 Sep)</h2>
+          <div class="program">
+            <div class="event"><div class="date">20 Sep</div><div><strong>Inauguración</strong><div class="small">Megapique gigante y música folklórica.</div></div></div>
+            <div class="event"><div class="date">21 Sep</div><div><strong>Degustación</strong><div class="small">Prueba gratuita en mercados locales.</div></div></div>
+            <div class="event"><div class="date">22 Sep</div><div><strong>Taller</strong><div class="small">Aprende a preparar el Pique Macho tradicional.</div></div></div>
+            <div class="event"><div class="date">23 Sep</div><div><strong>Tour Gastronómico</strong><div class="small">Visita restaurantes icónicos.</div></div></div>
+            <div class="event"><div class="date">24 Sep</div><div><strong>Charlas</strong><div class="small">Historia y tradición del pique con invitados locales.</div></div></div>
+            <div class="event"><div class="date">25 Sep</div><div><strong>Concurso</strong><div class="small">Concurso del pique más picante. ¡Trae tu valentía!</div></div></div>
+            <div class="event"><div class="date">26 Sep</div><div><strong>Noche de maridaje</strong><div class="small">Cervezas artesanales y pique.</div></div></div>
+            <div class="event"><div class="date">27 Sep</div><div><strong>Cierre</strong><div class="small">Baile y fiesta familiar.</div></div></div>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="card" style="margin-top:14px">
+          <h3>Testimonios</h3>
+          <div class="testimonials">
+            <div class="testimonial"><strong>María T.</strong><p class="small">"El mejor pique que probé. La música y la gente lo hicieron inolvidable."</p></div>
+            <div class="testimonial"><strong>Carlos R.</strong><p class="small">"El concurso de picantes fue lo máximo. Repetiré el próximo año."</p></div>
+            <div class="testimonial"><strong>Ana P.</strong><p class="small">"Taller muy práctico y sabroso — aprendí el secreto del aderezo."</p></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR: mapa / form / sponsors -->
+      <aside>
+        <div class="card">
+          <h3>Inscripción completa</h3>
+          <p class="small">Reserva tu lugar para talleres y concursos. Cupos limitados.</p>
+
+          <form id="mainForm">
+            <div class="field"><label class="small">Nombre completo</label><input type="text" id="name" required></div>
+            <div class="field"><label class="small">Correo</label><input type="email" id="email" required></div>
+            <div class="field"><label class="small">¿Asistirás a?</label>
+              <select id="option" required>
+                <option value="taller">Taller de Cocina (22 Sep)</option>
+                <option value="concurso">Concurso (25 Sep)</option>
+                <option value="tour">Tour Gastronómico (23 Sep)</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-primary" type="submit">Reservar</button><button class="btn" type="button" id="resetBtn">Borrar</button></div>
+          </form>
+
+          <hr style="margin:12px 0;opacity:0.8">
+          <h4>Ubicación</h4>
+          <p class="small">Plaza Principal / Zona gastronómica — Cochabamba (confirmar lugar exacto próximamente)</p>
+          <!-- Si quieres, reemplaza el src por un iframe de Google Maps -->
+          <div style="width:100%;height:160px;background:linear-gradient(180deg,#eee,#fff);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px">Mapa (próximamente)</div>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <h4>Patrocinadores</h4>
+          <p class="small">¿Quieres ser sponsor? Contáctanos.</p>
+          <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+            <div style="width:80px;height:40px;background:#fff;border-radius:6px;box-shadow:0 6px 14px rgba(0,0,0,0.06)"></div>
+            <div style="width:80px;height:40px;background:#fff;border-radius:6px;box-shadow:0 6px 14px rgba(0,0,0,0.06)"></div>
+          </div>
+        </div>
+
+      </aside>
+
+    </section>
+
+    <footer>
+      <div style="max-width:var(--max-width);margin:0 auto;padding:12px 18px;display:flex;flex-direction:column;gap:8px;align-items:center">
+        <div class="socials">
+          <a href="#" aria-label="facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+          <a href="#" aria-label="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#" aria-label="youtube"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+        <div style="font-size:13px;color:#777">© Semana del Pique Macho — Cochabamba · Diseñado para compartir</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Scripts: countdown + form handling simple (no backend) -->
+  <script>
+    // --------- Configura la fecha de inicio del evento aquí (Ajusta la zona horaria si hace falta)
+    const eventDate = new Date('2025-09-20T10:00:00-04:00'); // 20 Sep 2025 10:00 (America/La_Paz UTC-4)
+
+    function updateCountdown(){
+      const now = new Date();
+      const diff = eventDate - now;
+      if(diff <= 0){
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        document.getElementById('countdownLabel').textContent = '¡En curso!';
+        return;
+      }
+      const s = Math.floor(diff/1000%60);
+      const m = Math.floor(diff/1000/60%60);
+      const h = Math.floor(diff/1000/3600%24);
+      const d = Math.floor(diff/1000/3600/24);
+      document.getElementById('days').textContent = String(d).padStart(2,'0');
+      document.getElementById('hours').textContent = String(h).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+    }
+    setInterval(updateCountdown,1000);
+    updateCountdown();
+
+    // Mini form: UX-only — muestra un agradecimiento y limpia campos
+    document.getElementById('miniForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const name = document.getElementById('nameMini').value.trim();
+      const email = document.getElementById('emailMini').value.trim();
+      if(!name||!email){alert('Completa nombre y correo');return}
+      alert('¡Gracias, '+name+'! Te enviamos información al correo: '+email);
+      this.reset();
+    });
+
+    // Main form: ejemplo de validación (en producción conectar a backend)
+    document.getElementById('mainForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const option = document.getElementById('option').value;
+      if(!name||!email){alert('Completa los datos');return}
+      // Aquí puedes enviar con fetch a tu API o a un servicio de email (Mailgun, etc.)
+      alert('Reservado: '+option+' — Gracias, '+name+'!');
+      this.reset();
+    });
+
+    // Botón que abre el formulario principal (scroll)
+    document.getElementById('btn-register').addEventListener('click',function(){
+      document.getElementById('name').focus();
+      window.scrollTo({top:document.getElementById('mainForm').offsetTop-50,behavior:'smooth'});
+    });
+
+    // Reset
+    document.getElementById('resetBtn').addEventListener('click',function(){document.getElementById('mainForm').reset();});
+
+    // Botón más info (ejemplo)
+    document.getElementById('btn-more').addEventListener('click',function(){window.location.href='#program'});
+
+  </script>
+</body>
+</html>
